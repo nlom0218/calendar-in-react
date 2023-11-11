@@ -14,7 +14,7 @@ type CalendarContext = {
   month: number;
   navigationYear: number;
   navigationMonth: number;
-  limit?: number;
+  limitedDataCount?: number;
   calendarStorage: CalendarStorage;
   calendarDataFormat: 'long' | 'short';
   dataLoading: boolean;
@@ -31,7 +31,7 @@ type CalendarContext = {
 type Props = {
   year: number;
   month: number;
-  limit?: number;
+  limitedDataCount?: number;
   formatChangedWidth: number;
   calendarDataChildren: ReactNode;
   calendarRef: RefObject<HTMLUListElement>;
@@ -47,7 +47,7 @@ export const CalendarContext = createContext<CalendarContext | null>(null);
 const CalendarProvider = ({
   year,
   month,
-  limit,
+  limitedDataCount,
   formatChangedWidth,
   calendarDataChildren,
   children,
@@ -152,7 +152,7 @@ const CalendarProvider = ({
     month,
     navigationYear,
     navigationMonth,
-    limit,
+    limitedDataCount,
     calendarStorage,
     calendarDataFormat,
     dataLoading,

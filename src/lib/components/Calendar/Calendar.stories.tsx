@@ -76,3 +76,36 @@ export const ScheduleCalendar: Story = {
     }),
   },
 };
+
+/**
+ * LimitScheduleCalendar 달력에 제한된 개수의 데이터가 렌덩이 된 스토리입니다.
+ * 각 Day의 우측에는 남은 데이터 개수가 보여집니다. 클릭해보세요.
+ * 또한 달력의 너비가 줄어들 경우, 전체 데이터 개수가 보여집니다.
+ */
+export const LimitScheduleCalendar: Story = {
+  args: {
+    year: new Date().getUTCFullYear(),
+    month: new Date().getMonth() + 1,
+    limitedDataCount: 3,
+    onClickRestDataCount: (date: Date) => {
+      alert(`${format.date(date)}에 남은 데이터 개수를 클릭했어요.`);
+    },
+    onClickTotalDataCount: (date: Date) => {
+      alert(`${format.date(date)}에 전체 데이터 개수를 클릭했어요.`);
+    },
+    children: SCHEDULES.map((item, index) => {
+      return (
+        <Calendar.Item
+          key={index}
+          date={new Date(item.date)}
+          onClickCalendarItem={(date) =>
+            alert(`${format.date(date)}에 있는 ${item.name}을 클릭했어요.`)
+          }
+          style={{ cursor: 'pointer' }}
+        >
+          {item.name}
+        </Calendar.Item>
+      );
+    }),
+  },
+};

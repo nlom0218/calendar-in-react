@@ -19,9 +19,18 @@ type Props = {
 const DayItem = ({ data }: Props) => {
   const { state, date, day, dayOfWeek, children } = data;
 
-  const { limit, isToday, onClickDay } = useCalendar();
+  const {
+    limitedDataCount,
+    calendarDataFormat,
+    isToday,
+    onClickDay,
+    onClickRestDataCount,
+    onClickTotalDataCount,
+  } = useCalendar();
 
-  const renderCalendarItems = limit ? children?.slice(0, limit) : children;
+  const renderCalendarItems = limitedDataCount
+    ? children?.slice(0, limitedDataCount)
+    : children;
 
   return (
     <Layout>
@@ -35,8 +44,26 @@ const DayItem = ({ data }: Props) => {
         >
           {day}
         </Day>
+        {limitedDataCount &&
+          children &&
+          calendarDataFormat === 'long' &&
+          children.length - limitedDataCount > 0 && (
+            <RestRecords
+              onClick={() => onClickRestDataCount && onClickRestDataCount(date)}
+            >
+              +{children.length - limitedDataCount}
+            </RestRecords>
+          )}
       </DayContainer>
-      <Wrapper>{renderCalendarItems}</Wrapper>
+      {calendarDataFormat === 'short' && children?.length ? (
+        <TotalRecordCount
+          onClick={() => onClickTotalDataCount && onClickTotalDataCount(date)}
+        >
+          <span>{children?.length}</span>
+        </TotalRecordCount>
+      ) : (
+        <Wrapper>{renderCalendarItems}</Wrapper>
+      )}
     </Layout>
   );
 };
@@ -68,7 +95,7 @@ const RestRecords = styled.div`
   height: 22px;
 
   border-radius: 50%;
-  background-color: ${color.blue[50]};
+  background-color: ${color.neutral[50]};
 
   cursor: pointer;
 `;

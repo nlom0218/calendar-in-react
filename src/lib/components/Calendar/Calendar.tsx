@@ -22,12 +22,12 @@ type Props = {
    */
   month: number;
   /**
-   * 달력 내 Data 개수를 제한하는 속성.
+   * 달력 내 렌덩이 되는 Data의 개수를 제한하는 속성입니다.
    *
    */
-  limit?: number;
+  limitedDataCount?: number;
   /**
-   * 달력에 렌더링 되는 Data 형식이 바뀌는 기준 너비를 지정하는 속성. 지정된 값보다 달력의 너비가 줄어들면 Data의 전체 개수가 렌더링됨.
+   * 달력에 렌더링 되는 Data 형식이 바뀌는 기준 너비를 지정하는 속성입니다. 지정된 값보다 달력의 너비가 줄어들면 Data의 전체 개수가 렌더링됩니다.
    *
    *  * @default 750
    */
@@ -49,12 +49,12 @@ type Props = {
    */
   onClickDay?: (date: Date) => void;
   /**
-   * 달력에 보여지지 않는 Data의 개수를 클릭했을 때 호출되는 함수. 해당 Data가 위치한 Date 객체를 매개변수로 받음.
+   * 달력에 보여지지 않는 Data의 개수를 클릭했을 때 호출되는 함수입니다. 해당 Data가 위치한 Date 객체를 매개변수로 받습니다.
    *
    */
   onClickRestDataCount?: (date: Date) => void;
   /**
-   * formatChangedWidth 속성의 값보다 달력의 너비가 줄어들었을 때, 렌덩이 되는 전체 데이터 개수를 클릭했을 때 호출되는 함수. 해당 Data가 위치한 Date 객체를 매개변수로 받음.
+   * formatChangedWidth 속성의 값보다 달력의 너비가 줄어들었을 때, 렌덩이 되는 전체 데이터 개수를 클릭했을 때 호출되는 함수입니다. 해당 Data가 위치한 Date 객체를 매개변수로 받습니다.
    *
    */
   onClickTotalDataCount?: (date: Date) => void;
@@ -63,7 +63,7 @@ type Props = {
 const Calendar = ({
   year,
   month,
-  limit,
+  limitedDataCount,
   formatChangedWidth = 750,
   children,
   dataLoading = false,
@@ -78,7 +78,7 @@ const Calendar = ({
     <CalendarProvider
       year={year}
       month={month}
-      limit={limit}
+      limitedDataCount={limitedDataCount}
       formatChangedWidth={formatChangedWidth}
       calendarDataChildren={children}
       calendarRef={calendarRef}
