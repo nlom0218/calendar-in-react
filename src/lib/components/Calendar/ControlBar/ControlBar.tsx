@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { css, styled } from 'styled-components';
+import { styled, css } from 'styled-components';
 
 import color from '../../../styles/color';
 import useOutsideClick from '../../../hooks/useOutsideClick';
@@ -15,6 +15,7 @@ const ControlBar = () => {
   );
 
   const handleClickMonthNavigation = (month: number) => {
+    console.log(month);
     setIsOpenCalendarNavigation(false);
   };
 
