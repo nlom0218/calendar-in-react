@@ -53,7 +53,7 @@ export const ClickDayCalendar: Story = {
 };
 
 /**
- * ScheduleCalendar 달력에 데이터가 렌덩이 된 스토리입니다.
+ * ScheduleCalendar는 달력에 데이터가 렌덩이 된 스토리입니다.
  * 각각의 데이터를 클릭해보세요.
  */
 export const ScheduleCalendar: Story = {
@@ -78,7 +78,7 @@ export const ScheduleCalendar: Story = {
 };
 
 /**
- * LimitScheduleCalendar 달력에 제한된 개수의 데이터가 렌덩이 된 스토리입니다.
+ * LimitScheduleCalendar는 달력에 제한된 개수의 데이터가 렌덩이 된 스토리입니다.
  * 각 Day의 우측에는 남은 데이터 개수가 보여집니다. 클릭해보세요.
  * 또한 달력의 너비가 줄어들 경우, 전체 데이터 개수가 보여집니다.
  */
@@ -107,5 +107,16 @@ export const LimitScheduleCalendar: Story = {
         </Calendar.Item>
       );
     }),
+  },
+};
+
+/**
+ * DataLoadingCalendar는 달력에 데이터가 로딩될 때의 스토리입니다.
+ */
+export const DataLoadingCalendar: Story = {
+  args: {
+    year: new Date().getUTCFullYear(),
+    month: new Date().getMonth() + 1,
+    dataLoading: true,
   },
 };

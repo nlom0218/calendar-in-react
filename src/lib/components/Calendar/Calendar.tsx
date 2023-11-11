@@ -33,7 +33,7 @@ type Props = {
    */
   formatChangedWidth?: number;
   /**
-   * 달력에 렌더링되는 Data의 로딩 상태를 지정하는 속성
+   * 달력에 렌더링되는 Data의 로딩 상태를 지정하는 속성입니다.
    *
    * * @default false
    */
