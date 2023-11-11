@@ -18,6 +18,10 @@ type CalendarContext = {
   calendarStorage: CalendarStorage;
   calendarDataFormat: 'long' | 'short';
   dataLoading: boolean;
+  themeColor: {
+    accent: string;
+    hover: string;
+  };
   isToday: (date: Date) => boolean;
   shiftMonth: (type: 'next' | 'prev' | 'today') => void;
   navigateYear: (year: number) => void;
@@ -36,6 +40,10 @@ type Props = {
   calendarDataChildren: ReactNode;
   calendarRef: RefObject<HTMLUListElement>;
   dataLoading: boolean;
+  themeColor: {
+    accent: string;
+    hover: string;
+  };
   onChangeCalendar?: (year: number, month: number) => void;
   onClickDay?: (date: Date) => void;
   onClickRestDataCount?: (date: Date) => void;
@@ -53,6 +61,7 @@ const CalendarProvider = ({
   children,
   calendarRef,
   dataLoading,
+  themeColor,
   onChangeCalendar,
   onClickDay,
   onClickRestDataCount,
@@ -156,6 +165,7 @@ const CalendarProvider = ({
     calendarStorage,
     calendarDataFormat,
     dataLoading,
+    themeColor,
     isToday,
     shiftMonth,
     navigateYear,

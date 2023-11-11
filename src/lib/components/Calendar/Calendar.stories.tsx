@@ -120,3 +120,19 @@ export const DataLoadingCalendar: Story = {
     dataLoading: true,
   },
 };
+
+/**
+ * CustomThemeColorCalendar는 달력의 테마 색상을 변경한 스토리입니다.
+ * 로딩바의 색상과 네이게이션의 선택된 날짜, hover 색상을 지정할 수 있습니다.
+ */
+export const CustomThemeColorCalendar: Story = {
+  args: {
+    year: new Date().getUTCFullYear(),
+    month: new Date().getMonth() + 1,
+    dataLoading: true,
+    themeColor: {
+      accent: '#3b82f6',
+      hover: '#dbeafe',
+    },
+  },
+};

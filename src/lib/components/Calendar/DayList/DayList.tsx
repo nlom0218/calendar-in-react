@@ -11,13 +11,13 @@ type Props = {
 };
 
 const DayList = ({ calendarRef }: Props) => {
-  const { calendarStorage, dataLoading } = useCalendar();
+  const { calendarStorage, dataLoading, themeColor } = useCalendar();
 
   return (
     <Layout $numberOfWeeks={calendarStorage.length / 7} ref={calendarRef}>
       {dataLoading && (
         <LoadingBar>
-          <CircularProgress $circleColor={color.neutral[500]}>
+          <CircularProgress $circleColor={themeColor.accent}>
             <div></div>
             <div></div>
             <div></div>

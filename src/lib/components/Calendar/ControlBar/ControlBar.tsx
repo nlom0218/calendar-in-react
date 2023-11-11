@@ -8,8 +8,15 @@ import { useCalendar } from '../../../hooks/useCalendar';
 import ArrowIcon from '../../Icons/ArrowIcon';
 
 const ControlBar = () => {
-  const { year, month, navigationYear, navigate, navigateYear, shiftMonth } =
-    useCalendar();
+  const {
+    year,
+    month,
+    navigationYear,
+    themeColor,
+    navigate,
+    navigateYear,
+    shiftMonth,
+  } = useCalendar();
 
   const [isOpenCalendarNavigation, setIsOpenCalendarNavigation] =
     useState(false);
@@ -59,6 +66,7 @@ const ControlBar = () => {
             {Array.from({ length: 12 }).map((_, index) => (
               <Month
                 $isCurMonth={index + 1 === month && year === navigationYear}
+                $themeColor={themeColor}
                 key={index}
                 onClick={() => handleClickMonthNavigation(index + 1)}
               >
@@ -198,6 +206,10 @@ const MonthNavigation = styled.ul`
 
 type MonthProps = {
   $isCurMonth: boolean;
+  $themeColor: {
+    accent: string;
+    hover: string;
+  };
 };
 
 const Month = styled.li<MonthProps>`
@@ -208,14 +220,14 @@ const Month = styled.li<MonthProps>`
 
   cursor: pointer;
 
-  ${({ $isCurMonth }) => css`
-    color: ${$isCurMonth ? 'black' : color.neutral[600]};
+  ${({ $isCurMonth, $themeColor }) => css`
+    color: ${$isCurMonth ? $themeColor.accent : color.neutral[600]};
     font-weight: ${$isCurMonth ? 500 : 300};
-  `}
 
-  &:hover {
-    background-color: ${color.neutral[100]};
-  }
+    &:hover {
+      background-color: ${$themeColor.hover};
+    }
+  `}
 
   @media screen and (max-width: 768px) {
     padding: 4px 8px;

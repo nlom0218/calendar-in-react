@@ -9,6 +9,7 @@ import DayOfWeeks from '../DayOfWeeks/DayOfWeeks';
 
 import ControlBar from './ControlBar/ControlBar';
 import DayList from './DayList/DayList';
+import color from '../../styles/color';
 
 type Props = {
   /**
@@ -39,6 +40,14 @@ type Props = {
    */
   dataLoading?: boolean;
   /**
+   * 달력의 로딩바, 네이게이션의 month에 대한 색상을 지정하는 속성입니다.
+   *
+   */
+  themeColor?: {
+    accent: string;
+    hover: string;
+  };
+  /**
    * 달력의 년, 월이 바뀔 때 호출되는 함수입니다. year, month를 매개변수로 받습니다.
    *
    */
@@ -67,6 +76,10 @@ const Calendar = ({
   formatChangedWidth = 750,
   children,
   dataLoading = false,
+  themeColor = {
+    accent: color.neutral[600],
+    hover: color.neutral[100],
+  },
   onChangeCalendar,
   onClickDay,
   onClickRestDataCount,
@@ -83,6 +96,7 @@ const Calendar = ({
       calendarDataChildren={children}
       calendarRef={calendarRef}
       dataLoading={dataLoading}
+      themeColor={themeColor}
       onChangeCalendar={onChangeCalendar}
       onClickDay={onClickDay}
       onClickRestDataCount={onClickRestDataCount}
