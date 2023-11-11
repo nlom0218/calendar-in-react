@@ -14,4 +14,9 @@ const meta: Meta<typeof Calendar> = {
 
 export default meta;
 
-export const DefaultCalendar: Story = {};
+export const DefaultCalendar: Story = {
+  args: {
+    year: 2023,
+    month: 11,
+  },
+};
