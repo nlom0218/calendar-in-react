@@ -1,0 +1,48 @@
+import React from 'react';
+import { styled } from 'styled-components';
+
+import calendar from '../../../utils/calendar';
+import color from '../../../styles/color';
+
+import DayItem from '../DayItem/DayItem';
+
+type Props = {
+  calendarRef: React.RefObject<HTMLUListElement>;
+};
+
+const DayList = ({ calendarRef }: Props) => {
+  const calendarStorage = calendar.getCalendarStorage(2023, 11);
+
+  return (
+    <Layout $numberOfWeeks={calendarStorage.length / 7} ref={calendarRef}>
+      {calendarStorage.map((data, index) => (
+        <DayItem key={index} data={data} />
+      ))}
+    </Layout>
+  );
+};
+
+export default DayList;
+
+type DaysProps = {
+  $numberOfWeeks: number;
+};
+
+const Layout = styled.ul<DaysProps>`
+  position: relative;
+
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  grid-template-rows: ${({ $numberOfWeeks }) =>
+    `repeat(${$numberOfWeeks}, minmax(135px, auto))`};
+  gap: 1px;
+  border: 1px solid ${color.neutral[200]};
+
+  background-color: ${color.neutral[200]};
+
+  @media screen and (max-width: 510px) {
+    font-size: 1.4rem;
+    grid-template-rows: ${({ $numberOfWeeks }) =>
+      `repeat(${$numberOfWeeks}, minmax(80px, auto))`};
+  }
+`;
