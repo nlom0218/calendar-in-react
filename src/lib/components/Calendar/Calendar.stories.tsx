@@ -23,3 +23,16 @@ export const DefaultCalendar: Story = {
     month: new Date().getMonth() + 1,
   },
 };
+
+/**
+ * HandleCalendar는 달력의 년, 월의 값을 특정 함수로 핸들링할 수 있는 스토리입니다.
+ * 화살표를 클릭해보세요.
+ */
+export const HandleCalendar: Story = {
+  args: {
+    year: new Date().getUTCFullYear(),
+    month: new Date().getMonth() + 1,
+    onChangeCalendar: (year, month) =>
+      alert(`${year}년, ${month}월로 이동합니다!`),
+  },
+};
