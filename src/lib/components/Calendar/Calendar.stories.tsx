@@ -14,9 +14,12 @@ const meta: Meta<typeof Calendar> = {
 
 export default meta;
 
+/**
+ * DefaultCalendar는 현재 년, 월을 렌더링한 기본적인 Calendar의 스토리입니다.
+ */
 export const DefaultCalendar: Story = {
   args: {
-    year: 2023,
-    month: 11,
+    year: new Date().getUTCFullYear(),
+    month: new Date().getMonth() + 1,
   },
 };
