@@ -3,6 +3,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import Calendar from './Calendar';
 
 import format from '../../utils/format';
+import SCHEDULES from '../../mocks/schedules';
 
 type Story = StoryObj<typeof Calendar>;
 
@@ -48,5 +49,30 @@ export const ClickDayCalendar: Story = {
     year: new Date().getUTCFullYear(),
     month: new Date().getMonth() + 1,
     onClickDay: (date) => alert(`${format.date(date)}을 클릭했어요.`),
+  },
+};
+
+/**
+ * ScheduleCalendar 달력에 데이터가 렌덩이 된 스토리입니다.
+ * 각각의 데이터를 클릭해보세요.
+ */
+export const ScheduleCalendar: Story = {
+  args: {
+    year: new Date().getUTCFullYear(),
+    month: new Date().getMonth() + 1,
+    children: SCHEDULES.map((item, index) => {
+      return (
+        <Calendar.Item
+          key={index}
+          date={new Date(item.date)}
+          onClickCalendarItem={(date) =>
+            alert(`${format.date(date)}에 있는 ${item.name}을 클릭했어요.`)
+          }
+          style={{ cursor: 'pointer' }}
+        >
+          {item.name}
+        </Calendar.Item>
+      );
+    }),
   },
 };

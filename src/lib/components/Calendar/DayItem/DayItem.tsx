@@ -2,9 +2,9 @@ import { type ReactElement } from 'react';
 import { styled } from 'styled-components';
 
 import color from '../../../styles/color';
+import { useCalendar } from '../../../hooks/useCalendar';
 
 import Day from '../Day/Day';
-import { useCalendar } from '../../../hooks/useCalendar';
 
 type Props = {
   data: {
@@ -19,9 +19,9 @@ type Props = {
 const DayItem = ({ data }: Props) => {
   const { state, date, day, dayOfWeek, children } = data;
 
-  const { isToday, onClickDay } = useCalendar();
+  const { limit, isToday, onClickDay } = useCalendar();
 
-  const renderCalendarItems = children;
+  const renderCalendarItems = limit ? children?.slice(0, limit) : children;
 
   return (
     <Layout>

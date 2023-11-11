@@ -1,8 +1,8 @@
 import React from 'react';
 import { styled } from 'styled-components';
 
-import calendar from '../../../utils/calendar';
 import color from '../../../styles/color';
+import { useCalendar } from '../../../hooks/useCalendar';
 
 import DayItem from '../DayItem/DayItem';
 
@@ -11,7 +11,7 @@ type Props = {
 };
 
 const DayList = ({ calendarRef }: Props) => {
-  const calendarStorage = calendar.getCalendarStorage(2023, 11);
+  const { calendarStorage } = useCalendar();
 
   return (
     <Layout $numberOfWeeks={calendarStorage.length / 7} ref={calendarRef}>

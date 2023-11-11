@@ -1,13 +1,14 @@
 import { PropsWithChildren, useRef } from 'react';
 import { styled } from 'styled-components';
 
+import CalendarProvider from '../../contexts/CalendarContext/CalendarProvider';
 import GlobalStyles from '../../styles/global';
 
+import CalendarItem from '../CalendarItem/CalendarItem';
 import DayOfWeeks from '../DayOfWeeks/DayOfWeeks';
 
 import ControlBar from './ControlBar/ControlBar';
 import DayList from './DayList/DayList';
-import CalendarProvider from '../../contexts/CalendarContext/CalendarProvider';
 
 type Props = {
   /**
@@ -98,6 +99,8 @@ const Calendar = ({
     </CalendarProvider>
   );
 };
+
+Calendar.Item = CalendarItem;
 
 export default Calendar;
 
