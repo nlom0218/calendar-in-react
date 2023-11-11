@@ -3,10 +3,14 @@ import { styled, css } from 'styled-components';
 
 import color from '../../../styles/color';
 import useOutsideClick from '../../../hooks/useOutsideClick';
+import { useCalendar } from '../../../hooks/useCalendar';
 
 import ArrowIcon from '../../Icons/ArrowIcon';
 
 const ControlBar = () => {
+  const { year, month, navigationYear, navigate, navigateYear, shiftMonth } =
+    useCalendar();
+
   const [isOpenCalendarNavigation, setIsOpenCalendarNavigation] =
     useState(false);
 
@@ -15,38 +19,46 @@ const ControlBar = () => {
   );
 
   const handleClickMonthNavigation = (month: number) => {
-    console.log(month);
+    navigate(navigationYear, month);
     setIsOpenCalendarNavigation(false);
   };
 
   return (
     <Layout ref={ref}>
       <p onClick={() => setIsOpenCalendarNavigation((prev) => !prev)}>
-        2023년 11월
+        {year}년 {month}월
         <ArrowIcon direction="down" />
       </p>
       <MonthShiftButtonContainer>
-        <MonthShiftButton>
+        <MonthShiftButton onClick={() => shiftMonth('prev')}>
           <ArrowIcon direction="left" />
         </MonthShiftButton>
-        <MonthShiftButton>
+        <MonthShiftButton onClick={() => shiftMonth('next')}>
           <ArrowIcon direction="right" />
         </MonthShiftButton>
-        <ShiftTodayButton>오늘</ShiftTodayButton>
+        <ShiftTodayButton onClick={() => shiftMonth('today')}>
+          오늘
+        </ShiftTodayButton>
       </MonthShiftButtonContainer>
       {isOpenCalendarNavigation && (
         <CalendarNavigation>
           <YearNavigation>
-            <div>2023</div>
+            <div>{navigationYear}</div>
             <YearNavigationButton>
-              <ArrowIcon direction="left" />
-              <ArrowIcon direction="right" />
+              <ArrowIcon
+                direction="left"
+                onClick={() => navigateYear(navigationYear - 1)}
+              />
+              <ArrowIcon
+                direction="right"
+                onClick={() => navigateYear(navigationYear + 1)}
+              />
             </YearNavigationButton>
           </YearNavigation>
           <MonthNavigation>
             {Array.from({ length: 12 }).map((_, index) => (
               <Month
-                $isCurMonth={index + 1 === 11 && 2023 === 2023}
+                $isCurMonth={index + 1 === month && year === navigationYear}
                 key={index}
                 onClick={() => handleClickMonthNavigation(index + 1)}
               >

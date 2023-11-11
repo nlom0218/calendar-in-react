@@ -4,6 +4,7 @@ import { styled } from 'styled-components';
 import color from '../../../styles/color';
 
 import Day from '../Day/Day';
+import { useCalendar } from '../../../hooks/useCalendar';
 
 type Props = {
   data: {
@@ -18,6 +19,8 @@ type Props = {
 const DayItem = ({ data }: Props) => {
   const { state, date, day, dayOfWeek, children } = data;
 
+  const { isToday, onClickDay } = useCalendar();
+
   const renderCalendarItems = children;
 
   return (
@@ -26,7 +29,9 @@ const DayItem = ({ data }: Props) => {
         <Day
           isCurrentMonthDay={state === 'cur'}
           dayOfWeek={dayOfWeek}
-          isToday={false}
+          isToday={isToday(date)}
+          onClick={() => onClickDay && onClickDay(date)}
+          hasClick={!!onClickDay}
         >
           {day}
         </Day>
