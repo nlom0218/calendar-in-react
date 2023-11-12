@@ -5,6 +5,7 @@ import DayOfWeeks from '../DayOfWeeks/DayOfWeeks';
 import DatePickerProvider from '../../contexts/DatePickerContext/DatePickerProvider';
 import GlobalStyles from '../../styles/global';
 
+import ConfirmCancelButton from './ConfirmCancelButton/ConfirmCancelButton';
 import ControlBar from './ControlBar/ControlBar';
 import DayList from './DayList/DayList';
 
@@ -26,13 +27,13 @@ type Props = {
    */
   mode?: 'single' | 'double';
   /**
-   * Date 선택 후 확인, 취소 버튼을 통해 startDate, endDate를 반환할 수 있는 버튼을 지정하는 속성.
+   * 확인, 취소 버튼을 지정하는 속성입니다. onClickConfirm 함수, onClickCancel 함수를 통해 해당 버튼을 핸들링 할 수 있습니다.
    *
    *  * @default false
    */
   showButtons?: boolean;
   /**
-   * 하루를 선택할지 혹은 기간을 선택할지를 지정하는 속성입니다.. 해당 속성을 true로 할 경우 endDate 속성은 무시됩니다..
+   * 하루를 선택할지 혹은 기간을 선택할지를 지정하는 속성입니다. 해당 속성을 true로 할 경우 endDate 속성은 무시됩니다.
    *
    *  * @default false
    */
@@ -43,12 +44,12 @@ type Props = {
    */
   onChangeDate?: (startDate: Date | null, endDate: Date | null) => void;
   /**
-   * Date 선택 후 확인버튼을 누를 때 호출되는 함수. startDate, endDate를 매개변수로 받음.
+   * Date 선택 후 확인버튼을 누를 때 호출되는 함수입니다. startDate, endDate를 매개변수로 받습니다.
    *
    */
   onClickConfirm?: (startDate: Date | null, endDate: Date | null) => void;
   /**
-   * Date 선택 후 취소버튼을 누를 때 호출되는 함수. startDate, endDate를 매개변수로 받음.
+   * Date 선택 후 취소버튼을 누를 때 호출되는 함수입니다.
    *
    */
   onClickCancel?: () => void;
@@ -79,7 +80,7 @@ const DatePicker = ({
         <ControlBar />
         <DayOfWeeks position="center" />
         <DayList />
-        {/* {showButtons && <ConfirmCancelButton />} */}
+        {showButtons && <ConfirmCancelButton />}
       </Layout>
     </DatePickerProvider>
   );

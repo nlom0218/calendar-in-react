@@ -58,3 +58,19 @@ export const OnlyOneDayPickDatePicker: Story = {
     },
   },
 };
+
+/**
+ * `ShowButtonDatePicker`는 확인, 취소 버튼이 있는 스토리입니다.
+ * 달력에서 startDate와 endDate를 선택한 후 하단의 버튼을 클릭해보세요.
+ */
+export const ShowButtonDatePicker: Story = {
+  args: {
+    showButtons: true,
+    onClickConfirm: (start, end) => {
+      if (start && end)
+        alert(`${format.date(start, '-')} ~ ${format.date(end, '-')}`);
+      else alert('시작일과 마지막일이 모두 선택되지 않았습니다.');
+    },
+    onClickCancel: () => alert('취소버튼을 눌렀습니다.'),
+  },
+};
