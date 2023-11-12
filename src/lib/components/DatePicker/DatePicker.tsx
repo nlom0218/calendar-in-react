@@ -38,7 +38,7 @@ type Props = {
    */
   isOnlyOneDay?: boolean;
   /**
-   * startDate, endDate가 바뀔 때 호출되는 함수. startDate, endDate를 매개변수로 받음.
+   * startDate, endDate가 바뀔 때 호출되는 함수입니다. startDate, endDate를 매개변수로 받습니다.
    *
    */
   onChangeDate?: (startDate: Date | null, endDate: Date | null) => void;

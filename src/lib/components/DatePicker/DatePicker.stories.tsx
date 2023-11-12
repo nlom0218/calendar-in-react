@@ -1,5 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
+import format from '../../utils/format';
+
 import DatePicker from './DatePicker';
 
 type Story = StoryObj<typeof DatePicker>;
@@ -28,5 +30,18 @@ export const StartEndDatePicker: Story = {
   args: {
     startDate: new Date('2023-10-03'),
     endDate: new Date('2023-10-11'),
+  },
+};
+
+/**
+ * `HandleChangeDateDatePicker`는 start Date와 end Date를 onChangeDate 함수로 받아올 수 있는 스토리입니다.
+ * 달력에서 startDate와 endDate를 선택해보세요.
+ */
+export const HandleChangeDateDatePicker: Story = {
+  args: {
+    onChangeDate: (start, end) => {
+      if (start && end)
+        alert(`${format.date(start, '-')} ~ ${format.date(end, '-')}`);
+    },
   },
 };
