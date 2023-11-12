@@ -33,7 +33,9 @@ const ControlBar = () => {
   return (
     <Layout ref={ref}>
       <p onClick={() => setIsOpenCalendarNavigation((prev) => !prev)}>
-        {year}년 {month}월
+        <span>
+          {year}년 {month}월
+        </span>
         <ArrowIcon direction="down" />
       </p>
       <MonthShiftButtonContainer>
@@ -111,6 +113,10 @@ const Layout = styled.div`
 
     &:hover {
       background-color: ${color.neutral[50]};
+    }
+
+    span {
+      width: 130px;
     }
   }
 

@@ -14,12 +14,12 @@ type Props = {
    * 시작일을 지정하는 속성입니다.
    *
    */
-  startDate: Date | null;
+  startDate?: Date | null;
   /**
    * 마지막일을 지정하는 속성입니다.
    *
    */
-  endDate: Date | null;
+  endDate?: Date | null;
   /**
    * 달력의 개수를 지정하는 속성입니다.
    *
@@ -91,8 +91,8 @@ const DatePicker = ({
 }: Props) => {
   return (
     <DatePickerProvider
-      initStartDate={startDate}
-      initEndDate={endDate}
+      initStartDate={startDate || null}
+      initEndDate={endDate || null}
       mode={mode}
       isOnlyOneDay={isOnlyOneDay}
       themeColor={themeColor}
