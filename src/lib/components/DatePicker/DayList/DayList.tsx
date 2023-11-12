@@ -1,13 +1,15 @@
 import { css, styled } from 'styled-components';
-import calendar from '../../../utils/calendar';
 
-// import { useDatePicker } from '../DatePickerContext/DatePickerProvider';
+import useDatePicker from '../../../hooks/useDatePicker';
 
 const DayList = () => {
-  // const { calendarStorage, nextCalendarInformation, getDayBackgroundColor, updateHoverDays, updateStartEndDate } =
-  //   useDatePicker();
-
-  const calendarStorage = calendar.getCalendarStorage(2023, 11);
+  const {
+    calendarStorage,
+    nextCalendarInformation,
+    getDayBackgroundColor,
+    updateHoverDays,
+    updateStartEndDate,
+  } = useDatePicker();
 
   return (
     <>
@@ -16,14 +18,14 @@ const DayList = () => {
           <Day
             key={index}
             $isCurrentMonthDay={state === 'cur'}
-            // onClick={() => updateStartEndDate(date)}
-            // onMouseEnter={() => {
-            //   if (!!nextCalendarInformation && state !== 'next')
-            //     updateHoverDays(date);
-            //   else if (!nextCalendarInformation) updateHoverDays(date);
-            // }}
-            // $backgroundColor={getDayBackgroundColor(date)}
-            // $isTransparent={!!nextCalendarInformation && state === 'next'}
+            onClick={() => updateStartEndDate(date)}
+            onMouseEnter={() => {
+              if (!!nextCalendarInformation && state !== 'next')
+                updateHoverDays(date);
+              else if (!nextCalendarInformation) updateHoverDays(date);
+            }}
+            $backgroundColor={getDayBackgroundColor(date)}
+            $isTransparent={!!nextCalendarInformation && state === 'next'}
           >
             {day}
           </Day>
@@ -95,13 +97,13 @@ const Day = styled.li<DayProps>`
   `}
 `;
 
-const NextYearMonth = styled.span`
-  display: flex;
-  gap: 15px;
+// const NextYearMonth = styled.span`
+//   display: flex;
+//   gap: 15px;
 
-  font-size: 2rem;
-  font-weight: 500;
+//   font-size: 2rem;
+//   font-weight: 500;
 
-  margin-top: 10px;
-  padding: 0px 10px;
-`;
+//   margin-top: 10px;
+//   padding: 0px 10px;
+// `;

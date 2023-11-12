@@ -2,7 +2,7 @@ import { useContext } from 'react';
 
 import { CalendarContext } from '../contexts/CalendarContext/CalendarProvider';
 
-export const useCalendar = () => {
+const useCalendar = () => {
   const value = useContext(CalendarContext);
 
   if (!value)
@@ -10,3 +10,5 @@ export const useCalendar = () => {
 
   return value;
 };
+
+export default useCalendar;

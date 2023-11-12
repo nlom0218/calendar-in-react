@@ -4,6 +4,7 @@ import color from '../../../styles/color';
 
 import ArrowIcon from '../../Icons/ArrowIcon';
 import Menu from '../../Menu/Menu';
+import useDatePicker from '../../../hooks/useDatePicker';
 
 const MENU_STYLE = css`
   & > div {
@@ -24,13 +25,13 @@ const MENU_ITEM_STYLE = css`
 `;
 
 const ControlBar = () => {
-  //   const {
-  //     year,
-  //     month,
-  //     handleMonthShift,
-  //     handleNavigationYear,
-  //     handleNavigationMonth,
-  //   } = useDatePicker();
+  const {
+    year,
+    month,
+    handleMonthShift,
+    handleNavigationYear,
+    handleNavigationMonth,
+  } = useDatePicker();
 
   const today = new Date();
 
@@ -41,7 +42,7 @@ const ControlBar = () => {
           <Menu
             trigger={
               <MenuTrigger>
-                2023년 <ArrowIcon direction="down" />
+                {year}년 <ArrowIcon direction="down" />
               </MenuTrigger>
             }
             $menuListStyle={MENU_ITEM_STYLE}
@@ -51,10 +52,7 @@ const ControlBar = () => {
               (_, index) => (
                 <Menu.Item
                   key={index}
-                  onClick={
-                    () => console.log(2023 + index)
-                    // () => handleNavigationYear(2023 + index)
-                  }
+                  onClick={() => handleNavigationYear(2023 + index)}
                 >
                   {2023 + index}년
                 </Menu.Item>
@@ -66,7 +64,7 @@ const ControlBar = () => {
           <Menu
             trigger={
               <MenuTrigger>
-                11월 <ArrowIcon direction="down" />
+                {month}월 <ArrowIcon direction="down" />
               </MenuTrigger>
             }
             $menuListStyle={MENU_ITEM_STYLE}
@@ -75,10 +73,7 @@ const ControlBar = () => {
             {Array.from({ length: 12 }).map((_, index) => (
               <Menu.Item
                 key={index}
-                onClick={
-                  () => console.log(index + 1)
-                  // handleNavigationMonth(index + 1)
-                }
+                onClick={() => handleNavigationMonth(index + 1)}
               >
                 {index + 1}월
               </Menu.Item>
@@ -87,19 +82,9 @@ const ControlBar = () => {
         </span>
       </CurrentYearMonth>
       <ShiftButton>
-        <ArrowIcon
-          direction="left"
-          //  onClick={() => handleMonthShift('prev')}
-        />
-        <TodayButton
-        // onClick={() => handleMonthShift('today')}
-        >
-          ●
-        </TodayButton>
-        <ArrowIcon
-          direction="right"
-          //  onClick={() => handleMonthShift('next')}
-        />
+        <ArrowIcon direction="left" onClick={() => handleMonthShift('prev')} />
+        <TodayButton onClick={() => handleMonthShift('today')}>●</TodayButton>
+        <ArrowIcon direction="right" onClick={() => handleMonthShift('next')} />
       </ShiftButton>
     </Layout>
   );

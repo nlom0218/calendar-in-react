@@ -2,8 +2,8 @@ import { useState } from 'react';
 import { styled, css } from 'styled-components';
 
 import color from '../../../styles/color';
+import useCalendar from '../../../hooks/useCalendar';
 import useOutsideClick from '../../../hooks/useOutsideClick';
-import { useCalendar } from '../../../hooks/useCalendar';
 
 import ArrowIcon from '../../Icons/ArrowIcon';
 

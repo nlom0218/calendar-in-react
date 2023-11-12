@@ -2,7 +2,7 @@ import React from 'react';
 import { css, styled } from 'styled-components';
 
 import color from '../../../styles/color';
-import { useCalendar } from '../../../hooks/useCalendar';
+import useCalendar from '../../../hooks/useCalendar';
 
 import DayItem from '../DayItem/DayItem';
 
