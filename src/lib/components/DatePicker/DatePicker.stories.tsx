@@ -45,3 +45,16 @@ export const HandleChangeDateDatePicker: Story = {
     },
   },
 };
+
+/**
+ * `OnlyOneDayPickDatePicker`는 하루만 선택할 수 있는 스토리입니다.
+ * 달력에서 원하는 날짜 하루를 선택해보세요.
+ */
+export const OnlyOneDayPickDatePicker: Story = {
+  args: {
+    isOnlyOneDay: true,
+    onChangeDate: (date) => {
+      if (date) alert(`${format.date(date, '-')}을 선택했어요.`);
+    },
+  },
+};

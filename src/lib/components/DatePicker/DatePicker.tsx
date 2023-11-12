@@ -32,7 +32,7 @@ type Props = {
    */
   showButtons?: boolean;
   /**
-   * 하루를 선택할지 혹은 기간을 선택할지를 지정하는 속성. 해당 속성을 true로 할 경우 endDate 속성은 무시됨.
+   * 하루를 선택할지 혹은 기간을 선택할지를 지정하는 속성입니다.. 해당 속성을 true로 할 경우 endDate 속성은 무시됩니다..
    *
    *  * @default false
    */
