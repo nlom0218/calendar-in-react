@@ -74,3 +74,12 @@ export const ShowButtonDatePicker: Story = {
     onClickCancel: () => alert('취소버튼을 눌렀습니다.'),
   },
 };
+
+/**
+ * `DoubleModeDatePicker`는 두 개의 DatePicker 달력을 보여주는 스토리입니다.
+ */
+export const DoubleModeDatePicker: Story = {
+  args: {
+    mode: 'double',
+  },
+};

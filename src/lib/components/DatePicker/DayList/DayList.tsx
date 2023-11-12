@@ -31,7 +31,7 @@ const DayList = () => {
           </Day>
         ))}
       </Layout>
-      {/* {nextCalendarInformation && (
+      {nextCalendarInformation && (
         <>
           <NextYearMonth>
             <span>{nextCalendarInformation.year}년</span>
@@ -56,7 +56,7 @@ const DayList = () => {
             )}
           </Layout>
         </>
-      )} */}
+      )}
     </>
   );
 };
@@ -97,13 +97,13 @@ const Day = styled.li<DayProps>`
   `}
 `;
 
-// const NextYearMonth = styled.span`
-//   display: flex;
-//   gap: 15px;
+const NextYearMonth = styled.span`
+  display: flex;
+  gap: 15px;
 
-//   font-size: 2rem;
-//   font-weight: 500;
+  font-size: 2rem;
+  font-weight: 500;
 
-//   margin-top: 10px;
-//   padding: 0px 10px;
-// `;
+  margin-top: 10px;
+  padding: 0px 10px;
+`;

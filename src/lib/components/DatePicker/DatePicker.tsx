@@ -21,7 +21,7 @@ type Props = {
    */
   endDate: Date | null;
   /**
-   * 달력의 개수를 지정하는 속성
+   * 달력의 개수를 지정하는 속성입니다.
    *
    *  * @default "single"
    */
