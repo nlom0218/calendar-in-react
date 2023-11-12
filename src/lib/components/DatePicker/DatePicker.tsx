@@ -39,6 +39,22 @@ type Props = {
    */
   isOnlyOneDay?: boolean;
   /**
+   * 선택된 날짜의 색상을 지정하는 속성입니다.
+   *
+   */
+  themeColor?: {
+    pick: string;
+    hover: string;
+  };
+  /**
+   * 확인, 취소 버튼의 색상을 지정하는 속성입니다.
+   *
+   */
+  buttonColor?: {
+    default: string;
+    hover: string;
+  };
+  /**
    * startDate, endDate가 바뀔 때 호출되는 함수입니다. startDate, endDate를 매개변수로 받습니다.
    *
    */
@@ -61,6 +77,14 @@ const DatePicker = ({
   mode = 'single',
   showButtons = false,
   isOnlyOneDay = false,
+  themeColor = {
+    pick: color.neutral[200],
+    hover: color.neutral[100],
+  },
+  buttonColor = {
+    default: color.neutral[600],
+    hover: color.neutral[700],
+  },
   onClickCancel,
   onClickConfirm,
   onChangeDate,
@@ -71,6 +95,7 @@ const DatePicker = ({
       initEndDate={endDate}
       mode={mode}
       isOnlyOneDay={isOnlyOneDay}
+      themeColor={themeColor}
       onChangeDate={onChangeDate}
       onClickCancel={onClickCancel}
       onClickConfirm={onClickConfirm}
@@ -80,7 +105,7 @@ const DatePicker = ({
         <ControlBar />
         <DayOfWeeks position="center" />
         <DayList />
-        {showButtons && <ConfirmCancelButton />}
+        {showButtons && <ConfirmCancelButton buttonColor={buttonColor} />}
       </Layout>
     </DatePickerProvider>
   );

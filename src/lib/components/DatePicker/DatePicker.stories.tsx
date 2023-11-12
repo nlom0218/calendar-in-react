@@ -83,3 +83,20 @@ export const DoubleModeDatePicker: Story = {
     mode: 'double',
   },
 };
+
+/**
+ * `CustomColorDatePicker`는 두 개의 DatePicker 달력을 보여주는 스토리입니다.
+ */
+export const CustomColorDatePicker: Story = {
+  args: {
+    showButtons: true,
+    themeColor: {
+      pick: '#bfdbfe',
+      hover: '#dbeafe',
+    },
+    buttonColor: {
+      default: '#3b82f6',
+      hover: '#2563eb',
+    },
+  },
+};

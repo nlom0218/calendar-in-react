@@ -1,15 +1,26 @@
-import { styled } from 'styled-components';
+import { css, styled } from 'styled-components';
 
 import useDatePicker from '../../../hooks/useDatePicker';
 import color from '../../../styles/color';
 
-const ConfirmCancelButton = () => {
+type Props = {
+  buttonColor: {
+    default: string;
+    hover: string;
+  };
+};
+
+const ConfirmCancelButton = ({ buttonColor }: Props) => {
   const { startDate, endDate, onClickCancel, onClickConfirm } = useDatePicker();
 
   return (
     <Layout>
-      <CancelButton onClick={onClickCancel}>취소</CancelButton>
+      <CancelButton onClick={onClickCancel} $color={buttonColor.default}>
+        취소
+      </CancelButton>
       <ConfirmButton
+        $backgroundColor={buttonColor.default}
+        $hoverColor={buttonColor.hover}
         onClick={() => {
           if (onClickConfirm) onClickConfirm(startDate, endDate);
         }}
@@ -37,19 +48,33 @@ const Button = styled.button`
   transition: background-color 0.2s ease;
 `;
 
-const CancelButton = styled(Button)`
-  color: ${color.neutral[600]};
+type CancelButtonProps = {
+  $color: string;
+};
+
+const CancelButton = styled(Button)<CancelButtonProps>`
+  ${({ $color }) => css`
+    color: ${$color};
+  `}
 
   &:hover {
     background-color: ${color.neutral[100]};
   }
 `;
 
-const ConfirmButton = styled(Button)`
-  background-color: ${color.neutral[600]};
+type ConfirmButtonProps = {
+  $backgroundColor: string;
+  $hoverColor: string;
+};
+
+const ConfirmButton = styled(Button)<ConfirmButtonProps>`
   color: ${color.white};
 
-  &:hover {
-    background-color: ${color.neutral[700]};
-  }
+  ${({ $backgroundColor, $hoverColor }) => css`
+    background-color: ${$backgroundColor};
+
+    &:hover {
+      background-color: ${$hoverColor};
+    }
+  `}
 `;

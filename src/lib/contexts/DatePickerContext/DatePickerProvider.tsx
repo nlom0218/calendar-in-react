@@ -34,6 +34,10 @@ type Props = {
   initEndDate: Date | null;
   mode: 'single' | 'double';
   isOnlyOneDay: boolean;
+  themeColor: {
+    pick: string;
+    hover: string;
+  };
   onChangeDate?: (startDate: Date | null, endDate: Date | null) => void;
   onClickConfirm?: (startDate: Date | null, endDate: Date | null) => void;
   onClickCancel?: () => void;
@@ -45,6 +49,7 @@ const DatePickerProvider = ({
   mode,
   children,
   isOnlyOneDay,
+  themeColor,
   onChangeDate,
   onClickConfirm,
   onClickCancel,
@@ -114,13 +119,13 @@ const DatePickerProvider = ({
     const fullDate = format.date(date, '-');
 
     if (startDate && format.date(startDate, '-') === fullDate)
-      return color.neutral[200];
+      return themeColor.pick;
 
     if (endDate && format.date(endDate, '-') === fullDate)
-      return color.neutral[200];
+      return themeColor.pick;
 
     if (isSoonSelectedDate(date) || isIncludeSelectDate(date))
-      return color.neutral[100];
+      return themeColor.hover;
 
     if (fullDate === format.date(today, '-')) return color.neutral[100];
 
