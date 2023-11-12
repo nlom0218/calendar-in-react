@@ -1,8 +1,8 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import format from '../../utils/format';
+import format from '../lib/utils/format';
 
-import DatePicker from './DatePicker';
+import DatePicker from '../lib/components/DatePicker/DatePicker';
 
 type Story = StoryObj<typeof DatePicker>;
 

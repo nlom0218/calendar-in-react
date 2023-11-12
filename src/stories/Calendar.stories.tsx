@@ -1,9 +1,9 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import Calendar from './Calendar';
+import Calendar from '../lib/components/Calendar/Calendar';
 
-import format from '../../utils/format';
-import SCHEDULES from '../../mocks/schedules';
+import format from '../lib/utils/format';
+import SCHEDULES from '../lib/mocks/schedules';
 
 type Story = StoryObj<typeof Calendar>;
 
