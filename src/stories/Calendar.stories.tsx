@@ -18,7 +18,7 @@ const meta: Meta<typeof Calendar> = {
 export default meta;
 
 /**
- * DefaultCalendar는 현재 년, 월을 렌더링한 기본적인 Calendar의 스토리입니다.
+ * `DefaultCalendar`는 현재 년, 월을 렌더링한 기본적인 Calendar의 스토리입니다.
  */
 export const DefaultCalendar: Story = {
   args: {
@@ -28,7 +28,7 @@ export const DefaultCalendar: Story = {
 };
 
 /**
- * HandleCalendar는 달력의 년, 월의 값을 특정 함수로 핸들링할 수 있는 스토리입니다.
+ * `HandleCalendar`는 달력의 년, 월의 값을 특정 함수로 핸들링할 수 있는 스토리입니다.
  * 화살표를 클릭해보세요.
  */
 export const HandleCalendar: Story = {
@@ -41,7 +41,7 @@ export const HandleCalendar: Story = {
 };
 
 /**
- * ClickDayCalendar는 달력의 day(일)을 클릭하면 특정 함수가 호출되는 스토리입니다.
+ * `ClickDayCalendar`는 달력의 day(일)을 클릭하면 특정 함수가 호출되는 스토리입니다.
  * 화살표를 클릭해보세요.
  */
 export const ClickDayCalendar: Story = {
@@ -53,7 +53,7 @@ export const ClickDayCalendar: Story = {
 };
 
 /**
- * ScheduleCalendar는 달력에 데이터가 렌덩이 된 스토리입니다.
+ * `ScheduleCalendar`는 달력에 데이터가 렌덩이 된 스토리입니다.
  * 각각의 데이터를 클릭해보세요.
  */
 export const ScheduleCalendar: Story = {
@@ -78,7 +78,7 @@ export const ScheduleCalendar: Story = {
 };
 
 /**
- * LimitScheduleCalendar는 달력에 제한된 개수의 데이터가 렌덩이 된 스토리입니다.
+ * `LimitScheduleCalendar`는 달력에 제한된 개수의 데이터가 렌덩이 된 스토리입니다.
  * 각 Day의 우측에는 남은 데이터 개수가 보여집니다. 클릭해보세요.
  * 또한 달력의 너비가 줄어들 경우, 전체 데이터 개수가 보여집니다.
  */
@@ -111,7 +111,7 @@ export const LimitScheduleCalendar: Story = {
 };
 
 /**
- * DataLoadingCalendar는 달력에 데이터가 로딩될 때의 스토리입니다.
+ * `DataLoadingCalendar`는 달력에 데이터가 로딩될 때의 스토리입니다.
  */
 export const DataLoadingCalendar: Story = {
   args: {
@@ -122,7 +122,7 @@ export const DataLoadingCalendar: Story = {
 };
 
 /**
- * CustomThemeColorCalendar는 달력의 테마 색상을 변경한 스토리입니다.
+ * `CustomThemeColorCalendar`는 달력의 테마 색상을 변경한 스토리입니다.
  * 로딩바의 색상과 네이게이션의 선택된 날짜, hover 색상을 지정할 수 있습니다.
  */
 export const CustomThemeColorCalendar: Story = {

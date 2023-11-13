@@ -85,7 +85,7 @@ export const DoubleModeDatePicker: Story = {
 };
 
 /**
- * `CustomColorDatePicker`는 두 개의 DatePicker 달력을 보여주는 스토리입니다.
+ * `CustomColorDatePicker`는 themeColor, buttonColor를 커스튬한 스토리입니다.
  */
 export const CustomColorDatePicker: Story = {
   args: {
