@@ -6,7 +6,7 @@
 
 # Calendar Component
 
-![Calendar-Demo](./asset/Calendar-Demo.gif)
+![Calendar-Demo](https://cdn.discordapp.com/attachments/1078222159966638143/1173489482612342794/Calendar-Demo.gif?ex=6564243f&is=6551af3f&hm=ebde365ae8f04d009b6efbaa54981d704483b2ebe37e7c2ef10ce1da01048b6a&)
 
 ## 사용법
 
@@ -97,7 +97,7 @@ function App() {
 export default App;
 ```
 
-![Calendar 컴포넌트 외부에서 데이터 주입하기](./asset/Calendar-Data.png)
+![Calendar 컴포넌트 외부에서 데이터 주입하기](https://cdn.discordapp.com/attachments/1078222159966638143/1173489482079686736/Calendar-Data.png?ex=6564243e&is=6551af3e&hm=36b8d3cefa6641a67583a0be2a7a3559003509963a670b88376a173ba2ac37a2&)
 
 이때, 주의해야할 점은 fetching으로 가져온 Data에 `Date` 즉, 날짜를 나타내는 속성이 있어야 합니다. 해당 속성을 `Calendar.Item` 컴포넌트의 `date` 속성으로 넘겨주어야 하기 때문입니다. `date` 속성의 타입은 `Date`입니다.
 
@@ -138,7 +138,7 @@ function App() {
 export default App;
 ```
 
-![Data 다루기](./asset/Calendar-Limited-Data.png)
+![Data 다루기](https://cdn.discordapp.com/attachments/1078222159966638143/1173489483212140614/Calendar-Limited-Data.png?ex=6564243f&is=6551af3f&hm=dcbfd4a0ee1b4f232b0407ce1d267dad7dd9b321ddb3f5fbb15fcb3260a3a4e1&)
 
 1. limitedDataCount: Data의 개수를 제한하는 속성입니다. 나머지 Data의 개수는 각 Day의 우측 상단에 표시됩니다.
 2. onClickRestDataCount: 나머지 Data의 개수를 클릭할 때 호출되는 함수입니다.
@@ -175,7 +175,7 @@ function App() {
 export default App;
 ```
 
-![Data 다루기](./asset/Calendar-Total-Data.png)
+![Data 다루기](https://cdn.discordapp.com/attachments/1078222159966638143/1173489484097126420/Calendar-Total-Data.png?ex=6564243f&is=6551af3f&hm=8960cfaf450e511f0d1d1def5671c8dddf1277e1c0afcdf49a686edb14db8232&)
 
 1. formatChangedWidth: 달력에 렌더링 되는 Data 형식이 바뀌는 기준 너비를 지정하는 속성입니다. 지정된 값보다 달력의 너비가 줄어들면 Data의 전체 개수가 렌더링됩니다.
 2. onClickTotalDataCount: formatChangedWidth 속성의 값보다 달력의 너비가 줄어들었을 때, 전체 Data의 개수를 클릭할 때 호출되는 함수입니다.
@@ -210,7 +210,7 @@ function App() {
 export default App;
 ```
 
-![Data 다루기](./asset/Calendar-Loading-Data.gif)
+![Data 다루기](https://cdn.discordapp.com/attachments/1078222159966638143/1173489483702882325/Calendar-Loading-Data.gif?ex=6564243f&is=6551af3f&hm=21dc000a24ee47bf2139e91ac608b668051a8901cb63b0a9f8090f6217302ba6&)
 
 1. dataLoading: 달력에 렌더링되는 Data의 로딩 상태를 지정하는 속성입니다.
 
@@ -240,7 +240,7 @@ export default App;
 
 # DatePicker Component
 
-![DatePicker-Demo](./asset/DatePicker-Demo.gif)
+![DatePicker-Demo](https://cdn.discordapp.com/attachments/1078222159966638143/1173489484675960872/DatePicker-Demo.gif?ex=6564243f&is=6551af3f&hm=eb8389aa0875d72b3a34404a2c54df7076f4dbc32a8736d7f1830d5ff4dcaad1&)
 
 ## 사용법
 
@@ -331,7 +331,7 @@ function App() {
 export default App;
 ```
 
-![ConfirmButton, CancelButton](./asset/DatePicker-Button.png)
+![ConfirmButton, CancelButton](https://cdn.discordapp.com/attachments/1078222159966638143/1173489484386545747/DatePicker-Button.png?ex=6564243f&is=6551af3f&hm=14002b060cb07d4f14a9813da69299e0994ea39849636d863dd822c7ab09de70&)
 
 1. onClickConfirm: 확인 버튼을 클릭했을 때 호출되는 함수입니다.
 2. onClickCancel: 취소 버튼을 클릭했을 때 호출되는 함수입니다.
@@ -365,7 +365,7 @@ function App() {
 export default App;
 ```
 
-![두 개의 달력으로 DatePicker 사용하기](./asset/DatePicker-Double.png)
+![두 개의 달력으로 DatePicker 사용하기](https://cdn.discordapp.com/attachments/1078222159966638143/1173489481727357038/DatePicker-Double.png?ex=6564243e&is=6551af3e&hm=69043cbaa3943c6df213a4dfaa1c61129393a261ec8ed0f590ae2b2fcda53671&)
 
 ## 전체 Props
 
