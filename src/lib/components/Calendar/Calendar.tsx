@@ -23,7 +23,7 @@ type Props = {
    */
   month: number;
   /**
-   * 달력 내 렌덩이 되는 Data의 개수를 제한하는 속성입니다.
+   * 달력에 렌더링이 되는 Data의 개수를 제한하는 속성입니다.
    *
    */
   limitedDataCount?: number;
