@@ -3,7 +3,6 @@ import styled from 'styled-components';
 import color from '../../styles/color';
 import DayOfWeeks from '../DayOfWeeks/DayOfWeeks';
 import DatePickerProvider from '../../contexts/DatePickerContext/DatePickerProvider';
-import GlobalStyles from '../../styles/global';
 
 import ConfirmCancelButton from './ConfirmCancelButton/ConfirmCancelButton';
 import ControlBar from './ControlBar/ControlBar';
@@ -100,7 +99,6 @@ const DatePicker = ({
       onClickCancel={onClickCancel}
       onClickConfirm={onClickConfirm}
     >
-      <GlobalStyles />
       <Layout>
         <ControlBar />
         <DayOfWeeks position="center" />

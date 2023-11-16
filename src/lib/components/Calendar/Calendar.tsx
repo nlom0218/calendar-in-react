@@ -2,7 +2,6 @@ import { PropsWithChildren, useRef } from 'react';
 import { styled } from 'styled-components';
 
 import CalendarProvider from '../../contexts/CalendarContext/CalendarProvider';
-import GlobalStyles from '../../styles/global';
 
 import CalendarItem from '../CalendarItem/CalendarItem';
 import DayOfWeeks from '../DayOfWeeks/DayOfWeeks';
@@ -102,7 +101,6 @@ const Calendar = ({
       onClickRestDataCount={onClickRestDataCount}
       onClickTotalDataCount={onClickTotalDataCount}
     >
-      <GlobalStyles />
       <Layout>
         <ControlBar />
         <CalendarContainer>
@@ -124,6 +122,12 @@ const Layout = styled.div`
   gap: 20px;
 
   user-select: none;
+
+  ul {
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+  }
 `;
 
 const CalendarContainer = styled.div`
