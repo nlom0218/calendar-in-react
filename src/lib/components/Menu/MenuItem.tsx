@@ -1,4 +1,4 @@
-import type { LiHTMLAttributes, PropsWithChildren } from 'react';
+import type { ComponentPropsWithoutRef, PropsWithChildren } from 'react';
 import { styled } from 'styled-components';
 
 import color from '../../styles/color';
@@ -15,7 +15,7 @@ const MenuItem = ({
   onClick,
   hide,
   ...props
-}: PropsWithChildren<Props> & LiHTMLAttributes<HTMLLIElement>) => {
+}: PropsWithChildren<Props> & ComponentPropsWithoutRef<'div'>) => {
   const handleClick = () => {
     if (hide) hide();
     onClick();
@@ -33,7 +33,7 @@ const MenuItem = ({
 
 export default MenuItem;
 
-const MenuItemLayout = styled.li`
+const MenuItemLayout = styled.div`
   padding: 6px 24px;
 
   transition: background-color 0.2s ease;

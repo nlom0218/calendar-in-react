@@ -91,15 +91,15 @@ type MenuListProps = Required<Pick<Props, '$menuListPosition'>> & {
   $menuListStyle?: CSSProp;
 };
 
-const MenuList = styled.ul<MenuListProps>`
+const MenuList = styled.div<MenuListProps>`
   position: absolute;
-  top: 34px;
+  top: 32px;
 
   display: grid;
   row-gap: 6px;
 
   width: max-content;
-  max-height: 80vh;
+  max-height: 240px;
   overflow: auto;
 
   padding: 10px 0px;
