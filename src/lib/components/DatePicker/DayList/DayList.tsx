@@ -67,6 +67,10 @@ const Layout = styled.ul`
   display: grid;
   row-gap: 5px;
   grid-template-columns: repeat(7, 1fr);
+
+  list-style: none;
+  margin: 0px;
+  padding: 0px;
 `;
 
 type DayProps = {
@@ -85,6 +89,8 @@ const Day = styled.li<DayProps>`
   padding: 5px 10px;
   text-align: center;
 
+  font-weight: 300;
+
   height: 50px;
 
   cursor: pointer;
@@ -101,7 +107,7 @@ const NextYearMonth = styled.span`
   display: flex;
   gap: 15px;
 
-  font-size: 2rem;
+  font-size: 20px;
   font-weight: 500;
 
   margin-top: 10px;

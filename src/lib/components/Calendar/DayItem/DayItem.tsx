@@ -89,7 +89,7 @@ const RestRecords = styled.div`
   display: flex;
   justify-content: center;
 
-  font-size: 1.4rem;
+  font-size: 14px;
 
   width: 22px;
   height: 22px;
@@ -106,7 +106,7 @@ const TotalRecordCount = styled.div`
   justify-content: center;
   align-items: center;
 
-  font-size: 1.8rem;
+  font-size: 18px;
 
   & > span {
     display: flex;
@@ -124,7 +124,7 @@ const TotalRecordCount = styled.div`
   }
 
   @media screen and (max-width: 768px) {
-    font-size: 1.4rem;
+    font-size: 14px;
 
     & > span {
       width: 32px;

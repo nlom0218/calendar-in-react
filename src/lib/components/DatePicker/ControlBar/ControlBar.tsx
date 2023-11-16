@@ -6,21 +6,13 @@ import ArrowIcon from '../../Icons/ArrowIcon';
 import Menu from '../../Menu/Menu';
 import useDatePicker from '../../../hooks/useDatePicker';
 
-const MENU_STYLE = css`
-  & > div {
-    padding: 0;
-  }
-`;
-
 const MENU_ITEM_STYLE = css`
   row-gap: 3px;
-  max-height: 320px;
   overflow: auto;
 
-  font-size: 1.6rem;
+  font-size: 16px;
   font-weight: 300;
 
-  top: 40px;
   left: 5px;
 `;
 
@@ -46,7 +38,6 @@ const ControlBar = () => {
               </MenuTrigger>
             }
             $menuListStyle={MENU_ITEM_STYLE}
-            $style={MENU_STYLE}
           >
             {Array.from({ length: today.getFullYear() - 2023 + 2 }).map(
               (_, index) => (
@@ -68,7 +59,6 @@ const ControlBar = () => {
               </MenuTrigger>
             }
             $menuListStyle={MENU_ITEM_STYLE}
-            $style={MENU_STYLE}
           >
             {Array.from({ length: 12 }).map((_, index) => (
               <Menu.Item
@@ -143,7 +133,7 @@ const TodayButton = styled.div`
 const CurrentYearMonth = styled.span`
   display: flex;
 
-  font-size: 2rem;
+  font-size: 20px;
   font-weight: 500;
 
   cursor: pointer;

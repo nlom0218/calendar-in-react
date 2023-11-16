@@ -58,6 +58,8 @@ const DayContainer = styled.div<DayProps>`
   width: 30px;
   height: 30px;
 
+  font-weight: 300;
+
   ${({ $isToday, $hasClick, $isCurrentMonthDay, $fontColor }) => css`
     background-color: ${$isToday && color.neutral[100]};
     opacity: ${$isCurrentMonthDay ? 1 : 0.4};

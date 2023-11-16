@@ -34,6 +34,10 @@ export default DayOfWeeks;
 
 const Layout = styled.ul`
   display: flex;
+
+  list-style: none;
+  margin: 0px;
+  padding: 0px;
 `;
 
 type DayOfWeekProps = {
@@ -45,6 +49,7 @@ const DayOfWeek = styled.li<DayOfWeekProps>`
   flex: 1;
 
   color: ${color.black};
+  font-weight: 300;
 
   ${({ $dayOfWeek, position }) => css`
     color: ${position === 'left' ? DAY_COLOR[$dayOfWeek] : color.black};

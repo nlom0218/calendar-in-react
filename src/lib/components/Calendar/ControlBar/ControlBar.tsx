@@ -121,7 +121,7 @@ const Layout = styled.div`
   }
 
   @media screen and (max-width: 768px) {
-    font-size: 1.4rem;
+    font-size: 14px;
   }
 `;
 
@@ -162,7 +162,7 @@ const ShiftTodayButton = styled.div`
 
 const CalendarNavigation = styled.div`
   position: absolute;
-  top: 40px;
+  top: 60px;
 
   background-color: ${color.white};
 
@@ -219,7 +219,7 @@ type MonthProps = {
 };
 
 const Month = styled.li<MonthProps>`
-  padding: 10px 20px;
+  padding: 12px 20px;
   border-radius: 4px;
 
   transition: background-color 0.2s ease;

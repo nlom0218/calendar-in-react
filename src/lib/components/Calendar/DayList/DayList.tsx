@@ -51,7 +51,7 @@ const Layout = styled.ul<DaysProps>`
   background-color: ${color.neutral[200]};
 
   @media screen and (max-width: 510px) {
-    font-size: 1.4rem;
+    font-size: 14px;
     grid-template-rows: ${({ $numberOfWeeks }) =>
       `repeat(${$numberOfWeeks}, minmax(80px, auto))`};
   }
