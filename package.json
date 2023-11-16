@@ -1,6 +1,6 @@
 {
   "name": "calendar-in-react",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Calendar, DatePicker in React",
   "type": "module",
   "main": "dist/index.umd.cjs",
