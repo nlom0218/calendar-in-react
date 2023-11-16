@@ -4,6 +4,18 @@
 
 [스토리북](https://main--65506b2cf3470f85e8fd949e.chromatic.com/)에서도 각각의 컴포넌트에 대한 여러 스토리를 확인할 수 있습니다.
 
+# 설치
+
+```sh
+$ npm install calendar-in-react
+```
+
+또는
+
+```sh
+$ yarn add calendar-in-react
+```
+
 # Calendar Component
 
 ![Calendar-Demo](https://cdn.discordapp.com/attachments/1078222159966638143/1173489482612342794/Calendar-Demo.gif?ex=6564243f&is=6551af3f&hm=ebde365ae8f04d009b6efbaa54981d704483b2ebe37e7c2ef10ce1da01048b6a&)
